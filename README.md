@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build and publish gem
-      uses: jstastny/publish-gem-to-github@master
+      uses: iotrak/publish-gem-to-github@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         owner: jstastny

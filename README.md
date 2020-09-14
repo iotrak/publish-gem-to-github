@@ -20,16 +20,16 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         owner: jstastny
+        working-directory: gem
 ```
-
-See example project using this action at [https://github.com/jstastny/testgem](https://github.com/jstastny/testgem).
 
 ## Inputs
 
-| Name | Description |
-| -----| ------------|
-| `token` | GitHub token that has write access to Packages. You can use `secrets.GITHUB_TOKEN` |
-| `owner` | Name of the user or organization account that owns the repository containing your project |
+| Name                | Description                                                                               |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| `token`             | GitHub token that has write access to Packages. You can use `secrets.GITHUB_TOKEN`        |
+| `owner`             | Name of the user or organization account that owns the repository containing your project |
+| `working-directory` | Name of the working directory that contains the gemspecs                                  |
 
 ## Versioning your gem
 
@@ -37,7 +37,9 @@ This action currently does not bump the gem's version when building it. It is up
 If you try to release gem in the same version that already exists, the step will fail.
 
 In case you want to ignore these types of failures, you can add:
+
 ```
 continue-on-error: true
 ```
+
 to the build step configuration.
